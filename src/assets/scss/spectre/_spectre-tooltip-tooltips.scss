@@ -1,0 +1,74 @@
+.spectre-tooltip {
+  position: relative;
+}
+
+.spectre-tooltip::after {
+  background: rgba(48, 55, 66, .95);
+  border-radius: .1rem;
+  bottom: 100%;
+  color: #fff;
+  content: attr(spectre-tooltip);
+  display: block;
+  left: 50%;
+  max-width: 320px;
+  opacity: 0;
+  overflow: hidden;
+  padding: .2rem .4rem;
+  pointer-events: none;
+  position: absolute;
+  text-overflow: ellipsis;
+  transform: translate(-50%, .4rem);
+  transition: opacity .2s, transform .2s;
+  white-space: pre;
+  z-index: 300;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.spectre-tooltip:focus::after,
+.spectre-tooltip:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -.2rem);
+}
+
+.spectre-tooltip[disabled],
+.spectre-tooltip.disabled {
+  pointer-events: auto;
+}
+
+.spectre-tooltip.tooltip-right::after {
+  bottom: 50%;
+  left: 100%;
+  transform: translate(-.2rem, 50%);
+  
+}
+
+.spectre-tooltip.tooltip-right:focus::after,
+.spectre-tooltip.tooltip-right:hover::after {
+  transform: translate(.2rem, 50%);
+}
+
+.spectre-tooltip.tooltip-bottom::after {
+  bottom: auto;
+  top: 100%;
+  transform: translate(-50%, -.4rem);
+}
+
+.spectre-tooltip.tooltip-bottom:focus::after,
+.spectre-tooltip.tooltip-bottom:hover::after {
+  transform: translate(-50%, .2rem);
+}
+
+.spectre-tooltip.tooltip-left::after {
+  bottom: 50%;
+  left: auto;
+  right: 100%;
+  transform: translate(.4rem, 50%);
+}
+
+.spectre-tooltip.tooltip-left:focus::after,
+.spectre-tooltip.tooltip-left:hover::after {
+  transform: translate(-.2rem, 50%);
+}

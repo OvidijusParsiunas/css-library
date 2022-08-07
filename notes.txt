@@ -1,0 +1,9 @@
+This project is currently mixing js and css for all libraries on the global scope. This should not be the goforward solution and hence this project's development has temporarily been halted.
+An optimal solution should use individual shadow dom instances for each library, where the css and js would act within their instance only.
+Currently, this is only possible for css, however js cannot have window.document object isolated within the shadow-dom exclusively, hence need to research a better alternative.
+
+For Vue3:
+"Volar replaces Vetur, our previous official VSCode extension for Vue 2. If you have Vetur currently installed, make sure to disable it in Vue 3 projects."
+
+When using Volar and VSCode - Disable internal vscode typescript for efficiency:
+https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode
